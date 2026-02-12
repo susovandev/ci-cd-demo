@@ -1,0 +1,13 @@
+node_modules
+dist
+.env
+.vscode
+.git
+.gitignore
+Dockerfile
+npm-debug.log
+coverage
+logs
+public/uploads
+__test__
+coverage
