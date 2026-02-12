@@ -1,4 +1,4 @@
-name: Testing With Jest & Supertest
+name: CI Test Workflow & Docker Build Push
 
 on:
   push:
@@ -39,8 +39,8 @@ jobs:
 
       - name: Build Docker Image
         run: |
-          docker build -t ${{ secrets.DOCKER_USERNAME }}/susovandev/ci-cd:latest .
+          docker build -t ${{ secrets.DOCKER_USERNAME }}/ci-cd:latest .
 
       - name: Push Docker Image
         run: |
-          docker push ${{ secrets.DOCKER_USERNAME }}/susovandev/ci-cd:latest
+          run: docker push ${{ secrets.DOCKER_USERNAME }}/ci-cd:latest
