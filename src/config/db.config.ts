@@ -18,6 +18,9 @@ export async function connectDB() {
 			Logger.info(`Testing database host: ${uri}`);
 			Logger.info(`Connected to test database`);
 		} else {
+			if (!envConfig.database.uri) {
+				throw new Error('Database URI is not defined in environment variables');
+			}
 			const connectionInstance = await mongoose.connect(
 				`${envConfig.database.uri}/${envConfig.database.name}`,
 			);
